@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+TODO write something about myself
+
 <!--
 **zimmah/zimmah** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
