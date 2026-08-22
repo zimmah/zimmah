@@ -1,8 +1,10 @@
 # Hi, I'm Zimmah 👋
 
-I've been in crypto since 2013 and writing code since childhood. These days I focus on the intersection of the two — building systems that operate reliably in the fast, adversarial environment of live financial markets.
+I've been in crypto since 2013 and writing code since childhood. These days I focus on the intersection of the two: building systems that operate reliably in the fast, adversarial environment of live financial markets.
 
-My current focus is **low-latency market infrastructure in Rust**: async WebSocket clients, real-time order book management, and algorithmic detection of trading opportunities. I care about correctness first — checksums, precise decimal arithmetic, and explicit error handling over convenient shortcuts — and performance second.
+By day I'm the sole engineer behind a business-critical logistics platform (Node.js, event-driven, Docker/Kubernetes) serving 200+ daily users at a fast-growing transport company, covering backend, frontend, infrastructure, and integrations end to end. By night I build low-latency market infrastructure in Rust: async WebSocket clients, real-time order book management, and algorithmic detection of trading opportunities.
+
+I care about correctness first (checksums, precise decimal arithmetic, and explicit error handling over convenient shortcuts) and performance second.
 
 ---
 
@@ -11,35 +13,32 @@ My current focus is **low-latency market infrastructure in Rust**: async WebSock
 ### 🦀 [arbitrage-scouter](https://github.com/zimmah/arbitrage-scouter)
 Real-time triangular arbitrage detection over Kraken's WebSocket v2 API, built in async Rust with Tokio.
 
-- Maintains live order books for multiple trading pairs, validated against Kraken's CRC32 checksums at depth 10
-- Multi-level book walking (VWAP-based) to accurately model price impact and liquidity constraints — not just best bid/ask (WIP)
-- Automatic resync on checksum failure via a dedicated mpsc channel
-- Terminal UI (ratatui) with live spread display and opportunity tracking
+- Maintains live order books for multiple trading pairs, validated against Kraken's CRC32 checksums, with automatic resync on checksum failure
+- Depth-aware, VWAP-based book walking to model price impact and liquidity constraints instead of naive best bid/ask
+- Resilient connection handling: automatic reconnection with backoff, ping/pong monitoring, graceful shutdown across all tasks
+- Live terminal UI (ratatui) with spread display and opportunity tracking
+
+Next up: extracting the WebSocket and order book layer into a standalone, publishable crate.
 
 ---
+## Background
+Over a decade of building across fintech and web3: front- and backend work on a European centralized exchange, smart contracts and full-stack development at a DeFi options protocol, data-driven ecosystem analysis at a major web3 gaming company, and more trading bots and market tools than I can count. I was one of the first to reverse-engineer the CryptoKitties genome.
+
+That history means I understand how exchanges behave under stress, why precision matters in financial arithmetic, and what separates a system that works in testing from one that holds up on mainnet.
 
 ## Why crypto
 
-I'm not here for the trading. I'm here because I believe economic freedom is a fundamental issue: that people should have sovereignty over their own money without depending on institutions that may not have their interests at heart.
-
-Decentralisation isn't just a technical property to me, it's the point. A financial system that is open, permissionless, and resistant to arbitrary control is genuinely worth building toward. That belief is what drew me into this space a decade ago and it's what keeps me here.
-
-I find that conviction makes me a better engineer in this domain. Understanding *why* these systems matter pushes me to build them properly.
+I'm not here for the trading. I believe economic freedom is a fundamental issue: people should have sovereignty over their own money without depending on institutions that may not have their interests at heart. Decentralisation isn't just a technical property to me, it's the point. That conviction is what drew me into this space a decade ago, and it pushes me to build these systems properly.
 
 ## Stack & interests
 
 **Languages:** Rust · Python · Go · JavaScript/TypeScript · Solidity   
-**Domain:** Crypto markets · Exchange infrastructure · WebSocket protocols · Order book mechanics · Web3   
+**Domain:** Crypto markets · Exchange infrastructure · WebSocket protocols · Order book mechanics · Event-driven systems   
 **Interests:** Decentralisation · Financial systems · Protocol design · Open source
 
 ---
 
-## Background
-
-Over a decade following and participating in crypto markets gives me context that's hard to get from documentation alone.   
-I understand how exchanges behave under stress, why precision matters in financial arithmetic, and what the difference is between a system that works in testing and one that holds up on mainnet.
-
-I'm based in the Netherlands. You can find me as **@zimmah** on most platforms, and on-chain as **zimmah.eth** or **zimmah.ron**.
+I'm based in the Netherlands. You can find me as **@zimmah** on most platforms, and on-chain as **zimmah.eth**.
 
 ---
 
